@@ -14,5 +14,30 @@
  * while let or const can not.
  * 
  * 3: Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their respective
- * scopes before execute.
+ * scopes before executed.
  */
+
+//1. Declaration and Assignment //
+    // Declaration //
+    // At the declaration phase variable is identified with the unique identifier age
+    var age;
+
+    // Assignment //
+    // Age is now assigned to number 23 //
+    age = 23;
+
+//2. Var, Let, and Const //
+    // Var // 
+    // Var is one of three keywords to declare a variable
+    var myVar; // ==> undefined because it has no assignment
+
+    // Let //
+    // Let is another of the three keywords to declare a variable, let can not be re-assigned
+    let fullName; // ==> undefined because it has no assignment
+
+    // Const //
+    // The last of the variable declaration keywords, it can not be re-assigned but works the same way
+    const newVariable = 50; // ==>  the number 50, we can declare and assign variables in the same line
+
+    //3. Hoisting //
+    
