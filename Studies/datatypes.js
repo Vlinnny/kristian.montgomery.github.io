@@ -21,3 +21,31 @@
  * variable do not affect the original. While passing BY REFERENCE we pass the reference to the actual parameter,
  * and no copy is created.
  */
+
+// Number // 
+    // We declare a variable and assign it a value of a number //
+    var myNum = 13; // ==> 13 //
+
+    var myNum = 1.6; // ==> 1.6 //
+
+    var myNum = -9; // ==> -9 //
+
+    console.log(myNum); // What logs? //
+    // Because we are using var, the variable myNum will equal -9 since it was re-assigned //
+
+// String //
+    // Let's assign some strings to variables //
+    const myStr = 'Operation Spark!';
+
+    let myStr = 'Will I print?';
+
+    var newStr = 'Coding is fun!';
+    // The variable myStr will put up an error here because we attempted to re-assign it when you //
+    // can not re-assign with const keyword //
+
+// Boolean //
+    // Remember boolean's can only be two values //
+    const oldBool = true; // ==> true //
+
+    const newBool = false; // ==> false //
+    // Booleans can only be either true of false. //
