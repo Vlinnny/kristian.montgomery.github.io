@@ -82,14 +82,12 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-        //if strings first char equals char return true (case insensitive)
-        if (string[0] == char) {
-            return true;
-        
-        } else {
-            //if not return false
-            return false;
-        }
+       if (char == string[0]) {
+        return true;
+       } else {
+        return false
+       }
+
 
     // YOUR CODE ABOVE HERE //
 }

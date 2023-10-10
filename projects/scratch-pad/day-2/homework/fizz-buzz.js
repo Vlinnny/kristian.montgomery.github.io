@@ -12,7 +12,25 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
+    //loop through numbers 1 - 100
+    for (var i = 1; i <= 100; i++) {
+        //if multiple of 3 and 5
+        if (i % 3 === 0 && i % 5 === 0) {
+            //print 'FizzBuzz'
+          console.log('FizzBuzz');
+          //if multiple of 3
+        } else if  (i % 3 === 0) {
+            //print 'Fizz'
+            console.log('Fizz');
+            //if multiple of 5
+          } else if (i % 5 === 0) {
+            //print 'Buzz'
+            console.log('Buzz');
+            // log rest of numbers 
+          } else {
+            console.log(i);
+          }
+        }
 
 
     // YOUR CODE GOES ABOVE HERE //
