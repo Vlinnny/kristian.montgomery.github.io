@@ -118,13 +118,15 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  //create variabel set to 0 for storage
-
-
-    for (var key in object) {
-     return key.length;
-    }
   
+  //create a variable to store the keys
+  var output = Object.keys(object); // list all the objects keys with Object.keys (its like a for in loop but simpler)
+    
+  //count the number of keys in object assigned with a nre variable
+  var numberKeys = output.length;
+
+  //return the length which is the number of key/value pairs
+  return numberKeys;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -135,22 +137,23 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
+  /*
+  Object.keys() method - gets an array of the objects keys
+  .reverse() method - a method used to reverse an array
+  forEach() method - method to iterate over an array and access the objects keys and values
+  */
   
-  //create storage
-  var output = [];
+    //get an array of the objects keys
+    var output = Object.keys(object).reverse(); // you can reverse them with .reverse() method
+  
+    //lets use forEach() method to log the keys in reverse
+    output.forEach(key => {
+      console.log(object[key]);
+    });
+  
+    console.log(output);
+    //wow im learning so many methods doing these 0.0
 
-  //loop over object
-  for (var key in object) {
-    //push keys into storage array
-    output.push(key);
-  }
-  //now loop over storage in reverse
-  for (var i = output.length - 1; i >= 0; i--) {
-    //log the outcome
-    console.log(output[i])
-  }
-  
-  
   // YOUR CODE ABOVE HERE //
 }
 
