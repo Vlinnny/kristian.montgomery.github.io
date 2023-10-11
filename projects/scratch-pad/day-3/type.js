@@ -15,7 +15,8 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    //Array.isArray determines if something is an array ;)
+   return Array.isArray(value);
     
     
     // YOUR CODE ABOVE HERE //
