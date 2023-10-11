@@ -49,3 +49,30 @@
 
     const newBool = false; // ==> false //
     // Booleans can only be either true of false. //
+
+// Array //
+    // We must always first declare a variable //
+    const arr = []; // Here we have just an empty array //
+
+    const myArr = [1, 2, 3]; // A new array, but filled with numbers //
+
+// Objects //
+    // Objects are created with {} (code block) //
+    const obj = {
+        make: 'Bach Mono', // Key/value pairs, separated by commas //
+        model: 'Mono R' // No comma on last key/value pair //
+    };
+
+// Function //
+    // Functions are written with the following syntax // 
+    function myFunction() {}; // Function then a unique identifier followed by parenthesis, and finally, a code block
+
+// Undefined //
+    // Undefined occurs when a variable that has no value is declared //
+    var x;
+    console.log(x); // ==> Undefined //
+
+// Null //
+    // Null expresses no value or identification //
+    const z = null;
+    console.log(z); // ==> Null //
