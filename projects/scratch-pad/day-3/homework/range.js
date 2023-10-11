@@ -23,7 +23,9 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+
+    // create storage
+    const output = [];
     
     
     

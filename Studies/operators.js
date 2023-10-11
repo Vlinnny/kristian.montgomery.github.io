@@ -14,3 +14,17 @@
  */
 
 // Assignment Operators //
+    // Assignment operators are used to assign values to variables //
+    var myVar = 13; // '=' is just one of a multitude of assignment operators //
+
+    x += y; // Same as x = x + y //
+
+    x -= y; // ==> x = x - y //
+
+// Arithmetic Operators //
+    // Arithmetic operators perform arithmetic on values (math man math)
+    var add = 6 + 1; // ==> 7
+
+    var mult = 6 * 2; // ==> 12
+
+// Comparison Operators //

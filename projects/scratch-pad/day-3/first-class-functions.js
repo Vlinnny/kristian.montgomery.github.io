@@ -13,8 +13,11 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+
+
+    return function (value) {
+       
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -69,7 +72,7 @@ function createEndsWithFilter(endsWith) {
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
-function modifyStrings(strings, modify) {
+function modifyStrings(strings, modify) { // modify is a function
     // YOUR CODE BELOW HERE //
     
     
@@ -85,9 +88,12 @@ function modifyStrings(strings, modify) {
  * Imagine you had a list of names, and you wanted to test they all 
  * begin with "C", or they are all exclaimations that end with "!".
  * 
+ * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
+ * 
+ *  let uppercase - modifyStrings(['a', 'b', 'c']), function(string) {return string.toUpperCase() }); // ['A', 'B', 'C'] 
  */
-function allStringsPass(strings, test) {
+function allStringsPass(strings, test) { // test is a function will return true or false
     // YOUR CODE BELOW HERE //
     
     
