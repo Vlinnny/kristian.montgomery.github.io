@@ -6,7 +6,7 @@
  * 4: Contact List
  * 
  *  a. Create a factory Function called makeContact(id, nameFirst, nameLast) 
- *     that returns a contact object.
+ *     that returns a contact object. 
  *     
  *          ex: makeContact(1, 'Max', 'Gaudin'); // => {id: 1, nameFirst: 'Max', nameLast: 'Gaudin'}
  *     
@@ -35,7 +35,13 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    var output = {};
 
+    output.id = id;
+    output.nameFirst = nameFirst;
+    output.nameLast = nameLast;
+
+    return output;
 } 
 
 
@@ -43,14 +49,28 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = []; // contact list //
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    }
+        },
+        addContact: function(contact) {
+            contacts.push(contact); // add contact object to the contact list //
+        },
+        findContact: function(fullName) { // returns contact object if found in contact-list, otherwise returns undefined
+            if (fullName === contacts) {
+                return contacts.push(fullName);
+            } else {
+                return undefined;
+            }
+        },
+        removeContact: function(contact){
+            contacts.splice(contact); // takes a contact object to be removed from contact list
+        },
+        printAllContactNames: function() {}
+    } // ==> returns an object
 }
 
 

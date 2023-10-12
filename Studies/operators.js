@@ -51,3 +51,7 @@
         // The last logical operand is the NOT (!) //
         // Returns false if a single operand can be converted to true; otherwise, returns true //
     console.log(!(!oldNum == newNum)); // ==> returns true because the sattement is false //
+
+// Unary Operators //
+    // Print the data type of a number //
+    console.log(typeof 6); // ==> prints 'number'
