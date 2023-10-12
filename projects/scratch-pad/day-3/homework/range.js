@@ -26,10 +26,15 @@ function range(start, end) {
 
     // create storage
     const output = [];
-    for (var i = start; i <= end; i++) {
-        output.push(i);
+    if (start < end) {
+    for (var i = start; i <= end; i++) { // how to make it return in reverse if first argument is greater?      
+      output.push(i);
     }
-   
+} else {
+    for (var j = start; j >= end; j--) {
+      output.push(j);
+    }
+}
     return output;
     // YOUR CODE GOES ABOVE HERE //
 }

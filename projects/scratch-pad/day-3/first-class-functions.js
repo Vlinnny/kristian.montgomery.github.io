@@ -111,10 +111,10 @@ function allStringsPass(strings, test) { // test is a function will return true 
     var storage = [];
 
     for (var i = 0; i < strings.length; i++) { // loop over strings //
-        storage.push(test(strings[i] === true));
+        storage.push(test(strings[i]));
     }
         
-    
+    return storage;
     // YOUR CODE ABOVE HERE //
 }
 
