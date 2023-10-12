@@ -15,8 +15,8 @@ function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
 
 
-    return function (value) {
-       
+    return function (value) { // BRO u were right I was thinking WAY to hard about this hooolly //
+       return value > base;
     }
     
     
@@ -32,7 +32,9 @@ function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
     
-    
+    return function(value) {
+        return value < base;
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -46,7 +48,13 @@ function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
     
-    
+    return function(string) {
+        if (string[0] == startsWith) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -77,9 +85,9 @@ function modifyStrings(strings, modify) { // modify is a function
     var output = [];
     
     for (var i = 0; i < strings.length; i++) {
-        if (modify(strings[i]) === true) {
-            output.push(strings[i]);
-        }
+         //need to modify string? how ?
+            output.push(modify(strings[i])); // this felt good to figure out, ik silly
+        
      }
         return output;
     
@@ -96,13 +104,16 @@ function modifyStrings(strings, modify) { // modify is a function
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  * 
- *  let uppercase - modifyStrings(['a', 'b', 'c']), function(string) {return string.toUpperCase() }); // ['A', 'B', 'C'] 
+ *  let uppercase = modifyStrings(['a', 'b', 'c']), function(string) {return string.toUpperCase() }); // ['A', 'B', 'C'] 
  */
 function allStringsPass(strings, test) { // test is a function will return true or false
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    var storage = [];
+
+    for (var i = 0; i < strings.length; i++) { // loop over strings //
+        storage.push(test(strings[i] === true));
+    }
+        
     
     // YOUR CODE ABOVE HERE //
 }
