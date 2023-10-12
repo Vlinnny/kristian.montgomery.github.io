@@ -49,7 +49,7 @@ function createStartsWithFilter(startsWith) {
     
     
     return function(string) {
-        if (string[0] == startsWith) {
+        if (string == startsWith[0]) {
             return true;
         } else {
             return false;

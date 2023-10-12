@@ -26,9 +26,11 @@ function range(start, end) {
 
     // create storage
     const output = [];
-    
-    
-    
+    for (var i = start; i <= end; i++) {
+        output.push(i);
+    }
+   
+    return output;
     // YOUR CODE GOES ABOVE HERE //
 }
 
