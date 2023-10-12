@@ -22,9 +22,32 @@
     x -= y; // ==> x = x - y //
 
 // Arithmetic Operators //
-    // Arithmetic operators perform arithmetic on values (math man math)
+    // Arithmetic operators perform arithmetic on values (math man math) //
     var add = 6 + 1; // ==> 7
 
     var mult = 6 * 2; // ==> 12
 
 // Comparison Operators //
+    // Assign a value to a variable //
+    var compareMe = 10;
+    // Log to print to the console, then use a comparison operator //
+    console.log(compareMe === '10'); // ==> prints false //
+                // strictly equal //
+    console.log(compareMe == '10'); // ==> prints true //
+                // loosely equal //
+    console.log(compareMe !== 10); // ==> prints false //
+                // does not equal //
+    // There is also >, <, >=, <=, and != //
+
+// Logical Operators //
+    // Logical operators are used for multiple variables or values //
+        // Assigning values to two variables //
+    var oldNum = 6; 
+    var newNum = 3;
+        // We are saying the value of oldNum is less than 10 (which is true), AND the value of newNum is greater than 1 (also true) //
+    console.log(oldNum < 10 && newNum > 1); // ==> prints true //
+        // Since both are false, the console will print false //
+    console.log(oldNum == 5 || newNum == 5); // ==> prints false //
+        // The last logical operand is the NOT (!) //
+        // Returns false if a single operand can be converted to true; otherwise, returns true //
+    console.log(!(!oldNum == newNum)); // ==> returns true because the sattement is false //
