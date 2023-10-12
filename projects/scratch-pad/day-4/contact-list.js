@@ -59,15 +59,17 @@ function makeContactList() {
         addContact: function(contact) {
             contacts.push(contact); // add contact object to the contact list //
         },
-        findContact: function(fullName) { // returns contact object if found in contact-list, otherwise returns undefined
-            if (fullName === contacts) {
+        findContact: function(fullName) { // returns contact object if found in contact-list, otherwise returns undefined //
+           for (var i = 0; i < contacts.length; i++) { // use .split to split fullName then test fullName to the keys nameFirst and nameLase
+            if (fullName.split(' ')[0] === output.nameFirst || fullName.split(' ')[1] === output.nameLast) {
                 return contacts.push(fullName);
             } else {
                 return undefined;
             }
+           }
         },
         removeContact: function(contact){
-            contacts.splice(contact); // takes a contact object to be removed from contact list
+            contacts.splice(contact, 1); // takes a contact object to be removed from contact list
         },
         printAllContactNames: function() {}
     } // ==> returns an object
