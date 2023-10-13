@@ -49,10 +49,10 @@ function createStartsWithFilter(startsWith) {
     
     
     return function(string) {
-        if (string == startsWith[0]) {
-            return true;
+        if (string[0] == startsWith) { // if given strings first char is loosely equal to startsWith //
+            return true; // return true //
         } else {
-            return false;
+            return false; // else return false //
         }
     }
     
@@ -104,17 +104,21 @@ function modifyStrings(strings, modify) { // modify is a function
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  * 
- *  let uppercase = modifyStrings(['a', 'b', 'c']), function(string) {return string.toUpperCase() }); // ['A', 'B', 'C'] 
+ *  
  */
 function allStringsPass(strings, test) { // test is a function will return true or false
     // YOUR CODE BELOW HERE //
-    var storage = [];
+   
 
-    for (var i = 0; i < strings.length; i++) { // loop over strings //
-        storage.push(test(strings[i]));
+    for (var i = 0; i < strings.length; i++) {  // loop over strings //
+        if (strings == strings) {
+        return test(strings[i]);
+        } else {
+            return false;
+        }
     }
         
-    return storage;
+    
     // YOUR CODE ABOVE HERE //
 }
 
