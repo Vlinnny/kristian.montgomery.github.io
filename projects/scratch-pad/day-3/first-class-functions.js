@@ -49,7 +49,7 @@ function createStartsWithFilter(startsWith) {
     
     
     return function(string) {
-        if (string[0] == startsWith) { // if given strings first char is loosely equal to startsWith //
+        if (string[0].toUpperCase() === startsWith.toUpperCase()) { // if given strings first char is loosely equal to startsWith //
             return true; // return true //
         } else {
             return false; // else return false //
@@ -67,8 +67,14 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    return function (string) {
+
+    if (string.charAt(string.length-1).toUpperCase() === endsWith.toUpperCase()) {
+        return true;
+    } else {
+        return false;
+    }
+}
     
     // YOUR CODE ABOVE HERE //
 }
@@ -111,10 +117,10 @@ function allStringsPass(strings, test) { // test is a function will return true 
    
 
     for (var i = 0; i < strings.length; i++) {  // loop over strings //
-        if (strings == strings) {
-        return test(strings[i]);
+        if (strings[i].toUpperCase() == strings[i].toUpperCase()) {
+        return test(strings);
         } else {
-            return false;
+        return false;
         }
     }
         
