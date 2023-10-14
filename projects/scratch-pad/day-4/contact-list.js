@@ -61,9 +61,8 @@ function makeContactList() {
         },
         findContact: function(fullName) { // returns contact object if found in contact-list, otherwise returns undefined //
            for (var i = 0; i < contacts.length; i++) {  // use .split to split fullName then test fullName to the keys nameFirst and nameLase
-            var FirLas = fullName.split(' ');
-            if (FirLas[0] === contacts.nameFirst || FirLas[1] === contacts.nameLast) {
-                return contacts.push(fullName);
+            if (contacts.nameFirst === fullName.split(' ')[0] && contacts.nameLast === fullName.split(' ')[1]) {
+                return contacts;
             } else {
                 return undefined;
             }

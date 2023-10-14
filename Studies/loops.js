@@ -61,5 +61,5 @@ console.log(x); // This will print the outcome of x ==> 6
 //'key' represent that keys IN whatever object you want to iterate over //
         console.log(myObj[key]); // ==> prints only the values from myObj 1, 2, 3 //
 
-        console.log(key); // == this will peing only the keys in myObj a, b, c //
+        console.log(key); // == this will print only the keys in myObj a, b, c //
     }   
