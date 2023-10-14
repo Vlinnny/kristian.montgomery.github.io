@@ -33,20 +33,33 @@ console.log(x); // This will print the outcome of x ==> 6
 
     // For loops have three parts, where to start, where to end, and the increment/decrement //
     for (var i = 0; i < myArr.length; i++) {
-//     start at 0 (arrays are zero indexed)
-//     as long as i is less than the length of myArr
-//     iterate by one each iteration
-        console.log(myArr[i]); // ==> 1 2 3 4 5
-//      print the array
+// start at 0 (arrays are zero indexed) //
+// as long as i is less than the length of myArr //
+// iterate by one each iteration //
+        console.log(myArr[i]); // ==> 1 2 3 4 5 //
+// print the array //
     }
 
     // Now lets do it in reverse //
     for (var i = myArr.length - 1; i >= 0; i--) {
-//      .length - 1 will always get the last element in an array
-//       then we say as long as i is greater than or equal to 0 (because arrays start at the 0 index)
-//       decrement by one each iteration
-        console.log(myArr[i]); // ==> 5 4 3 2 1
-        // print the array to the console
+// .length - 1 will always get the last element in an array //
+// then we say as long as i is greater than or equal to 0 (because arrays start at the 0 index) //
+// decrement by one each iteration //
+        console.log(myArr[i]); // ==> 5 4 3 2 1 //
+        // print the array to the console //
     }
 
 // For-in Loop //
+    // Create an object //
+    var myObj = {
+        a: 1,
+        b: 2,
+        c: 3
+    };
+
+    for (var key in myObj) {
+//'key' represent that keys IN whatever object you want to iterate over //
+        console.log(myObj[key]); // ==> prints only the values from myObj 1, 2, 3 //
+
+        console.log(key); // == this will peing only the keys in myObj a, b, c //
+    }   
