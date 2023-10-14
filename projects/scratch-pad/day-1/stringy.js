@@ -82,12 +82,12 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-       if (char == string[0]) {
+   
+    if (string.split('')[0] == char) {
         return true;
        } else {
-        return false
-       }
-
+        return false;
+       } 
 
     // YOUR CODE ABOVE HERE //
 }
