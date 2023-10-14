@@ -83,7 +83,7 @@ function toDashCase(string) {
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
    
-    if (string.split('')[0] == char) {
+    if (string[0].toUpperCase() === char.toUpperCase()) { // I feel silly for struggling with the case insensitive stuff //
         return true;
        } else {
         return false;
@@ -106,7 +106,11 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    if (string.charAt(string.length -1).toUpperCase() === char.toUpperCase()) {
+        return true;
+    } else {
+        return false;
+    }
 
 
     // YOUR CODE ABOVE HERE //
@@ -178,8 +182,9 @@ function longest(stringOne, stringTwo) {
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     //compare strings returning the given values depending on which letter is higher in alphabetical order
-    
-    return stringOne.localCompare(stringTwo);
+    let sort = console.log(stringOne.localCompare(stringTwo));
+
+    return sort;
 
     // YOUR CODE ABOVE HERE //
 }

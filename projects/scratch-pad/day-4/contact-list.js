@@ -60,7 +60,7 @@ function makeContactList() {
             contacts.push(contact); // add contact object to the contact list //
         },
         findContact: function(fullName) { // returns contact object if found in contact-list, otherwise returns undefined //
-           for (var i = 0; i < contacts.length; i++) {  // use .split to split fullName then test fullName to the keys nameFirst and nameLase
+           for (var i = 0; i < contacts.length; i++) {  // use .split to split fullName then test fullName to the keys nameFirst and nameLast
             if (contacts.nameFirst === fullName.split(' ')[0] && contacts.nameLast === fullName.split(' ')[1]) {
                 return contacts;
             } else {

@@ -117,8 +117,8 @@ function allStringsPass(strings, test) { // test is a function will return true 
    
 
     for (var i = 0; i < strings.length; i++) {  // loop over strings //
-        if (strings[i].toUpperCase() == strings[i].toUpperCase()) {
-        return test(strings);
+        if (test(strings[i])) {
+        return true;
         } else {
         return false;
         }
