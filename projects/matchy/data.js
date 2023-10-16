@@ -107,7 +107,7 @@ animals.push(dog, bird);
 var friends = [];
 // write a function called getRandom take our animals array and returns a random index of their input array  
 function getRandom() {
-
+friends.push(Math.random());
 
 
 }

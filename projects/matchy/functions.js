@@ -13,11 +13,11 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 // implement a function called 'search' that take a parameter represetning an Array of animals and a parameter reprseinting a string
-function search(animals, string) {
-    // looks through the animals array and returns the animal object if an animal with that name exsist
-    for (i = 0; i < animals.length; i++) {
-        if (animals[i].name === string) {
-            return animals; 
+function search(array, string) {
+    // looks through the array and returns the animal object if an animal with that name exsist
+    for (i = 0; i < array.length; i++) {
+        if (array[i].name === string) {
+            return array[i]; 
         } else {
             return null;
         }
