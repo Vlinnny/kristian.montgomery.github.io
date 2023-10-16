@@ -182,9 +182,9 @@ function longest(stringOne, stringTwo) {
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     //compare strings returning the given values depending on which letter is higher in alphabetical order
-    let sort = console.log(stringOne.localCompare(stringTwo));
+   return stringTwo.localeCompare(stringOne);
 
-    return sort;
+    
 
     // YOUR CODE ABOVE HERE //
 }
@@ -200,7 +200,7 @@ function sortAscending(stringOne, stringTwo) {
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
         
-    
+    return stringOne.localeCompare(stringTwo);
 
 
 
