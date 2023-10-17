@@ -6,7 +6,7 @@
  * 1. A few basic loops we use are the while, for, and for-in loops; they all loop over something but in
  * different ways, a while loop will execute as long as a specified condition evaluates to true, for loops repeat
  * untill a specified condition evaluates to false. And for-in loops are used to iterate over an objects key-value
- * pairs.Loops can loop any number of times, that be forward counting up to some limit, or backward counting down to 0
+ * pairs. Loops can loop any number of times, that be forward counting up to some limit, or backward counting down to 0
  */
 
 // While Loop //     
