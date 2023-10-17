@@ -117,16 +117,20 @@ function allStringsPass(strings, test) { // test is a function will return true 
    
 
     for (var i = 0; i < strings.length; i++) {  // loop over strings //
-        if (test(strings[i])) {
-        return true;
-        } else {
-        return false;
-        }
-    }
         
-    
+        strings.push(test(strings[i])); 
+        // return true if all strings pass the test //
+        if (strings === strings.length) {
+            return true;
+        } else {
+            return false;
+        }
+
+        
+    }
     // YOUR CODE ABOVE HERE //
 }
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

@@ -72,6 +72,8 @@ function makeContactList() {
             contacts.splice(contact, 1); // takes a contact object to be removed from contact list
         },
         printAllContactNames: function() {
+            
+            
            
         }
     } // ==> returns an object
