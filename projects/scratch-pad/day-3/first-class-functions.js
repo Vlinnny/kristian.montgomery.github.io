@@ -120,7 +120,7 @@ function allStringsPass(strings, test) { // test is a function will return true 
         
         strings.push(test(strings[i])); 
         // return true if all strings pass the test //
-        if (strings === strings.length) {
+        if (string = string) {
             return true;
         } else {
             return false;
