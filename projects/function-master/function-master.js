@@ -3,6 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+// Should take an object and return its values in an array
+return Object.values(object);
 
 } 
 
@@ -11,6 +13,8 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+// Should take an object and return all its keys in a string each separated with a space
+return Object.keys(object).join(' ');
 
 }
 
@@ -19,6 +23,8 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+// Should take an object and return all its string values in a string each separated with a space
+return Object.values(object).join(' ');
     
 }
 
@@ -27,7 +33,11 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)) {
+        return 'array';
+    } else {
+        return 'object';
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
