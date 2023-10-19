@@ -106,12 +106,12 @@ animals.push(dog, bird);
 // the data structure imma choose is array, because arrays contains a 'list' of values which is what the directions ask
 var friends = [];
 // write a function called getRandom take our animals array and returns a random index of their input array  
-function getRandom() {
- return Math.floor(Math.random() * animals.length); //  random integer of the length of animals 
+function getRandom(input) {
+ return Math.floor(Math.random() * input.length); //  random integer of the length of an input array //
 
 }
 // using the random index from above, get a random animal and add its 'name' to 'friends'
-
+  
  // using bracket notation add the 'friends' list as a property also named 'friends' on one of the animals in the 'animals' array
 
 /**

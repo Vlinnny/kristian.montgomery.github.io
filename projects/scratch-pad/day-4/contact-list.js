@@ -76,14 +76,25 @@ function makeContactList() {
             contacts.splice(contact, 1); // takes a contact object to be removed from contact list
         },
         printAllContactNames: function(name) { 
-        // Should have an printAllContactNames API that returns new-line separated String of all full-names of contacts //
-        // loop over contact life //
+        // create something to output //
+        var str = '';
+        // loop over the contact list //
         for (var i = 0; i < contacts.length; i++) {
-            // return full names separated, with a new line character //
-           return contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n';
-        }
+            // create a variable to store out contact list //
+           var storage = contacts[i];
+            // add the first name and last name of our contact to out str seperated //
+           str += storage.nameFirst + ' ' + storage.nameLast;
+           // if i does not equal the end of the list //
+           if (i !== contacts.length - 1) {
+            // add a new line to our output //
+            str += '\n';
+           }
            
         }
+        // return the output //
+        return str;
+           
+    }
     } // ==> returns an object
 }
 
