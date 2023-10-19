@@ -24,7 +24,10 @@ return Object.keys(object).join(' ');
 
 function valuesToString(object) {
 // Should take an object and return all its string values in a string each separated with a space
-return Object.values(object).join(' ');
+var val = Object.values(object); // stores values of object in val //
+
+var strTest = val.filter((string) => typeof string === 'string'); // uses .filter method to filer the values thats a string, assigned to a new variable
+    return strTest.join(' ');// returns the new variable //
     
 }
 

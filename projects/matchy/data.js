@@ -95,7 +95,7 @@ var bird = {
   species: 'bird',
   name: 'Bluey',
   noises: ['chirp', 'flap']
-}
+};
 
 // push values to animals //
 animals.push(dog, bird);
@@ -108,11 +108,14 @@ var friends = [];
 // write a function called getRandom take our animals array and returns a random index of their input array  
 function getRandom(input) {
  return Math.floor(Math.random() * input.length); //  random integer of the length of an input array //
-
 }
 // using the random index from above, get a random animal and add its 'name' to 'friends'
-  
- // using bracket notation add the 'friends' list as a property also named 'friends' on one of the animals in the 'animals' array
+  var  rando = getRandom(animals); // variable pointing to getRandom being called with animals array //
+  var rando2 = animals[rando]; // new variable assigned to the animals array adding the random index //
+
+ friends.push(rando2.name); // pushing the random animal name into friends //
+// Using **bracket notation**, add the `friends` list as a **property** also named `friends` on one of the animals in the `animals` array //
+ animals[0].friends = friends;
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
