@@ -13,12 +13,15 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 // implement a function called 'search' that take a parameter represetning an Array of animals and a parameter reprseinting a string
-function search(array, string) {
+function search(animals, string) {
     // looks through the array and returns the animal object if an animal with that name exsist
-    for (i = 0; i < array.length; i++) {
-        if (array[i].name === string) {
-            return array[i]; 
+    for (i = 0; i < animals.length; i++) {
+        // if animals name matches the given name //
+        if (animals[i].name === string) {
+            // return the animal object //
+            return animals[i]; 
         } else {
+            // return null // 
             return null;
         }
     }
@@ -27,17 +30,25 @@ function search(array, string) {
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-function replace(animals, name, replacmeent) {
+//               array    string    object                          //
+function replace(animals, name, replacement) {
+    // If an animal with that name exists within the `animals` Array //
+    if (animals.name === name) {
+        // replace it's entire Object with the replacement Object //
+        return animals.push(replacement());
+    }
 
 }
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//              array    string                                     //
 function remove(animals, name) {
-
+    // If an animal with that name exists within the `animals` Array, remove it //
+    if (animals.name === name) {
+        delete animals;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
