@@ -14,18 +14,16 @@
 //////////////////////////////////////////////////////////////////////
 // implement a function called 'search' that take a parameter represetning an Array of animals and a parameter reprseinting a string
 function search(animals, string) {
-    // looks through the array and returns the animal object if an animal with that name exsist
-    for (i = 0; i < animals.length; i++) {
-        // if animals name matches the given name //
-        if (animals[i].name === string) {
+           // if animals name matches the given string //
+        if (animals.name === string) {
             // return the animal object //
-            return animals[i]; 
+            return animals; 
         } else {
             // return null // 
             return null;
         }
     }
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////

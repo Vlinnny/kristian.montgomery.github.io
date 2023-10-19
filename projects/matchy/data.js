@@ -107,14 +107,12 @@ animals.push(dog, bird);
 var friends = [];
 // write a function called getRandom take our animals array and returns a random index of their input array  
 function getRandom() {
- var rando = Math.floor(Math.random() * animals.length); // stores a random integer of the length of animals in rando
-
- // using the random index from above, get a random animal and add its 'name' to 'friends'
-
- // using bracket notation add the 'friends' list as a property also named 'friends' on one of the animals in the 'animals' array
+ return Math.floor(Math.random() * animals.length); //  random integer of the length of animals 
 
 }
+// using the random index from above, get a random animal and add its 'name' to 'friends'
 
+ // using bracket notation add the 'friends' list as a property also named 'friends' on one of the animals in the 'animals' array
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and

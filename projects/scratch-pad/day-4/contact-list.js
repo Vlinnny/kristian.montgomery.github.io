@@ -60,19 +60,28 @@ function makeContactList() {
             contacts.push(contact); // add contact object to the contact list //
         },
         findContact: function(fullName) { // returns contact object if found in contact-list, otherwise returns undefined //
-           for (var i = 0; i < contacts.length; i++) {  // use .split to split fullName then test fullName to the keys nameFirst and nameLast
-            if (contacts.nameFirst === fullName.split(' ')[0] && contacts.nameLast === fullName.split(' ')[1]) {
-                return contacts;
-            } else {
-                return undefined;
+            // loop over the contact list //
+           for (var i = 0; i < contacts.length; i++) {
+            // split full name and store it in a variable //  
+            var arr = fullName.split(' ');
+            // compare the nameFirst and nameLast values to the fullName //
+            if (contacts[i].nameFirst === arr[0] && contacts[i].nameLast === arr[1])  {
+                // return the object if true //
+                return contacts[i];
             }
-           }    
+            
+          }    
         },
         removeContact: function(contact){
             contacts.splice(contact, 1); // takes a contact object to be removed from contact list
         },
-        printAllContactNames: function() { //  return a String formated with all the full-names //
-            
+        printAllContactNames: function(name) { 
+        // Should have an printAllContactNames API that returns new-line separated String of all full-names of contacts //
+        // loop over contact life //
+        for (var i = 0; i < contacts.length; i++) {
+            // return full names separated, with a new line character //
+           return contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n';
+        }
            
         }
     } // ==> returns an object
