@@ -118,16 +118,11 @@ function allStringsPass(strings, test) { // test is a function will return true 
 
     for (var i = 0; i < strings.length; i++) {  // loop over strings //
         
-        strings.push(test(strings[i])); 
-        // return true if all strings pass the test //
-        if (string = string) {
-            return true;
-        } else {
+        if (!test(strings[i])) {
             return false;
         }
-
-        
     }
+    return true;
     // YOUR CODE ABOVE HERE //
 }
 
