@@ -48,7 +48,8 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+// Should take a string of one word, and return the word with its first letter capitalized //
+return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -56,7 +57,13 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+// Should take a string of words and return a string with all the words capitalized //
+let arrStr = string.split(' ');
+
+for (var i = 0; i < arrStr.length; i++) {
+    arrStr[i] = arrStr[i][0].toUpperCase() + arrStr[i].substr(1);
+}
+return arrStr.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -64,7 +71,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+// Should take an object with a name property and return 'Welcome <Name>!' //
+return 'Welcome ' + object.name.charAt(0).toUpperCase() + object.name.slice(1) + '!';
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -72,7 +80,8 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+//  Should take an object with a name an a species and return '<Name> is a <Species>' //
+return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + object.species.charAt(0).toUpperCase + object.species.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
