@@ -80,7 +80,7 @@ return 'Welcome ' + object.name.charAt(0).toUpperCase() + object.name.slice(1) +
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-//  Should take an object with a name an a species and return '<Name> is a <Species>' //
+//  Should take an object with a name and a species and return '<Name> is a <Species>' //
 return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + object.species.charAt(0).toUpperCase + object.species.slice(1);
 }
 
@@ -89,7 +89,14 @@ return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + o
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+// Should take an object, if this object has a noises array return them as a string separated by a space, if there are no noises return 'there are no noises' //
+for (var key in object) {
+    if (object.noises === true) {
+        return object.noises.join(' ');
+    } else {
+        return 'there are no noises'
+    }
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -97,7 +104,8 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+// Should take a string of words and a word and return true if <word> is in <string of words>, otherwise return false. //
+return string.includes(word);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -105,7 +113,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+// Should take a name and an object and add the name to the object's friends array then return the object //
+object.friends.join(name);
 }
 
 //////////////////////////////////////////////////////////////////////
