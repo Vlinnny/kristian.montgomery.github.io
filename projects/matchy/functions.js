@@ -14,14 +14,19 @@
 //////////////////////////////////////////////////////////////////////
 // implement a function called 'search' that take a parameter represetning an Array of animals and a parameter reprseinting a string
 function search(animals, string) {
-           // if animals name matches the given string //
-        if (animals.name === string) {
-            // return the animal object //
-            return animals; 
-        } else {
-            // return null // 
-            return null;
-        }
+         // loop through the animals array //
+         for (var i = 0; i < animals.length; i++) {
+            // temp storage for animals index //
+            var animal = animals[i];
+            // if statemnet to meet conditions given //
+            if (animal.name === string) { // if animal with given string exist //
+                // returns animal // 
+                return animal;
+            } else {
+                // returns null if no animal with the name exsist //
+                return null;
+            }
+         }
     }
 
 
@@ -30,12 +35,12 @@ function search(animals, string) {
 //////////////////////////////////////////////////////////////////////
 //               array    string    object                          //
 function replace(animals, name, replacement) {
-    // If an animal with that name exists within the `animals` Array //
+    // if animal with given name exsist in animals array //
     if (animals.name === name) {
-        // replace it's entire Object with the replacement Object //
-        return animals.push(replacement());
+        // replace its entire object with the replacement object //
+        animals = replacement;
     }
-
+    // otherwise do nothing //
 }
 
 //////////////////////////////////////////////////////////////////////

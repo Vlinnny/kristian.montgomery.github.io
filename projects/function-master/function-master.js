@@ -80,8 +80,8 @@ return 'Welcome ' + object.name.charAt(0).toUpperCase() + object.name.slice(1) +
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-//  Should take an object with a name and a species and return '<Name> is a <Species>' //
-return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + object.species.charAt(0).toUpperCase + object.species.slice(1);
+//  Should take an object with a name an a species and return '<Name> is a <Species>' //
+return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + object.species.charAt(0).toUpperCase() + object.species.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -90,14 +90,13 @@ return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + o
 
 function maybeNoises(object) {
 // Should take an object, if this object has a noises array return them as a string separated by a space, if there are no noises return 'there are no noises' //
-for (var key in object) {
-    if (object[key].noises === true) {
-        return object[key].noises.join(' ');
+    if (object.noises === true) {
+        return object.noises.join(' ');
     } else {
         return 'there are no noises'
     }
   }
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
