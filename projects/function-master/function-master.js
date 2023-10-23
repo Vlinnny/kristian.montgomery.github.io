@@ -91,12 +91,12 @@ return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + o
 function maybeNoises(object) {
 // Should take an object, if this object has a noises array return them as a string separated by a space, if there are no noises return 'there are no noises' //
 for (var key in object) {
-    if (object.noises === true) {
-        return object.noises.join(' ');
+    if (object[key].noises === true) {
+        return object[key].noises.join(' ');
     } else {
         return 'there are no noises'
     }
-}
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -114,7 +114,7 @@ return string.includes(word);
 
 function addFriend (name, object) {
 // Should take a name and an object and add the name to the object's friends array then return the object //
-object.friends.join(name);
+return object.friends.join(name);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -122,7 +122,13 @@ object.friends.join(name);
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+// Should take a name and an object and return true if <name> is a friend of <object> and false otherwise //
 
+if (name.includes(object.friends)) {
+    return true;
+ } else {
+    return false;
+ }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -130,7 +136,10 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+// Should take a name and a list of people, and return a list of all the names that <name> is not friends with //
+for (var i = 0; i < array.length; i++) {
+    
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -138,6 +147,7 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
+// Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it //
 
 }
 
@@ -146,6 +156,7 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+// Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array> //
 
 }
 
@@ -154,6 +165,7 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
+//  Should take an array and return an array with all the duplicates removed //
 
 }
 
