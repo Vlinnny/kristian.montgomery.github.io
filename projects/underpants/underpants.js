@@ -90,7 +90,7 @@ _.first = function(array, number) {
     return array[0];
     } else {
     // otherwise, return the first <number> items of <array>
-    return array.length;
+    return array[number];
     }
    
 }
@@ -269,6 +269,18 @@ _.filter = function (array, func) {
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+// takes in two arguments: an array, a function //
+_.reject = function(array, func) {
+    // call <function> for each element in <array> //
+    for (var i = 0; i < array.length; i++) {
+        func(array[i]);
+    }
+    // return a new array of elements for which calling <function> returned false //
+    var output = [];
+    if (func(array[i] === false)) {
+        return output.push();
+    }
+}
 
 
 /** _.partition

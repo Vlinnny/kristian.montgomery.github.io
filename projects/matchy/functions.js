@@ -12,21 +12,17 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// implement a function called 'search' that take a parameter represetning an Array of animals and a parameter reprseinting a string
+// implement a function called 'search' that take a parameter representing an Array of animals and a parameter representing a string
 function search(animals, string) {
-         // loop through the animals array //
-         for (var i = 0; i < animals.length; i++) {
-            // temp storage for animals index //
-            var animal = animals[i];
-            // if statemnet to meet conditions given //
-            if (animal.name === string) { // if animal with given string exist //
-                // returns animal // 
-                return animal;
-            } else {
-                // returns null if no animal with the name exsist //
-                return null;
-            }
-         }
+    // declare new variable and use findIndex to get the index that satisfies the conditions //
+    var output = animals.findIndex(z => z.name === string) // annonymous function designed to do one thing, compare given value to string
+       if(output !== -1) {
+        // if true return the object //
+        return animals[output];
+       } else {
+        // otherwise return null //
+        return null;
+       }
     }
 
 
@@ -35,12 +31,11 @@ function search(animals, string) {
 //////////////////////////////////////////////////////////////////////
 //               array    string    object                          //
 function replace(animals, name, replacement) {
-    // if animal with given name exsist in animals array //
-    if (animals.name === name) {
-        // replace its entire object with the replacement object //
-        animals = replacement;
+    // if an <animal> with <name> exist withing the animals array, replace it with the replacement object //
+    if (animals === name) {
+        
+        return animals = copy(replacement);
     }
-    // otherwise do nothing //
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +54,15 @@ function remove(animals, name) {
 //////////////////////////////////////////////////////////////////////
 
 function add(animals, animal) {
-
+    // loop over animals array //
+    for (var i = 0; i < animals.length; i++) {
+        // if statement with given conditions //
+        // animal names length less 0    animal species length less 0      animals name is unique
+    if (animals[i].name.length > 0 && animals[i].species.length > 0 && animals[i].name !== animal) {
+        // return animals array with new object //
+        return animals.join(animals);
+    } 
+ }
 }
 
 /**
