@@ -34,7 +34,7 @@ function replace(animals, name, replacement) {
     // loop to iterate over animals array //
    for (var i = 0; i < animals.length; i++) {
     // if statement to check if name matches animals //
-    if (animals[i] === name) {
+    if (animals[i].name === name) {
         //if true replace it with the replacement object //
         return animals.push(replacement);
     }
@@ -48,7 +48,7 @@ function replace(animals, name, replacement) {
 function remove(animals, name) {
     // If an animal with that name exists within the `animals` Array, remove it //
    for (var i = 0; i < animals.length; i++) {
-    if (animals[i] === name) {
+    if (animals[i].name === name) {
         delete animals[i];
     }
    }
