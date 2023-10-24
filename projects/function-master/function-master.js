@@ -90,11 +90,15 @@ return object.name.charAt(0).toUpperCase() + object.name.slice(1) + ' is a ' + o
 
 function maybeNoises(object) {
 // Should take an object, if this object has a noises array return them as a string separated by a space, if there are no noises return 'there are no noises' //
-    if (object.noises === true) {
-        return object.noises.join(' ');
-    } else {
-        return 'there are no noises'
-    }
+    if (object && object.noises) { // check for object and noises key //
+        if (Array.isArray(object.noises)) { // see if object.noises is array //
+            if (object.noises.length > 0) { // see if length is > 0 //
+                return object.noises.join(' '); // if true return joined separated by a space //
+            }
+        }
+    } 
+    // if false there are no noises ;) //
+    return 'there are no noises';
   }
 
 
@@ -147,7 +151,11 @@ for (var i = 0; i < array.length; i++) {
 
 function updateObject(object, key, value) {
 // Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it //
-
+    if (object.hasOwnProperty(key)) {
+        return object[key];
+    } else {
+        return object[key] = value;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -156,7 +164,17 @@ function updateObject(object, key, value) {
 
 function removeProperties(object, array) {
 // Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array> //
-
+// loop over array //
+for (var i = 0; i < array.length; i++) {
+    // loop over object //
+    for (var key in object) {
+        // if any properties match //
+        if (object[key] === array[i]) {
+            // remove //
+            delete object[key];
+        }
+     }
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -165,7 +183,7 @@ function removeProperties(object, array) {
 
 function dedup(array) {
 //  Should take an array and return an array with all the duplicates removed //
-
+return array.filter((x,y) => array.indexOf(x) === y);
 }
 
 //////////////////////////////////////////////////////////////////////

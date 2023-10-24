@@ -51,23 +51,22 @@ function remove(animals, name) {
     if (animals[i].name === name) {
         delete animals[i];
     }
-   }
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//   array of animals,  object representing a new animal to be added   //
 function add(animals, obj) {
-    // loop over animals array //
-    for (var i = 0; i < obj.length; i++) {
-        // obj name length less 0    obj species length less 0      obj name is unique
-    if (obj[i].name.length > 0 && obj[i].species.length > 0 && obj[i].name !== animals) {
-        // return animals array with new object //
-        return animals.join(obj);
-    } 
- }
-}
+    // check that the animal object has a 'name' property with a length > 0 and a 'species' property with a length > 0 //
+    // and has a unique name, meaning no other animals have that name //
+    if (obj.name.length > 0 && obj.species.length > 0 && obj.name !== animals.name) {
+        // add this object to the animals array if all conditions pass //
+       return animals.push(obj);
+    }
+  }
+
 
 /**
  * You did it! You're all done with Matchy!
