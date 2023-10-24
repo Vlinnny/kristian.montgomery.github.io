@@ -31,11 +31,14 @@ function search(animals, string) {
 //////////////////////////////////////////////////////////////////////
 //               array    string    object                          //
 function replace(animals, name, replacement) {
-    // if an <animal> with <name> exist withing the animals array, replace it with the replacement object //
-    if (animals === name) {
-        
-        return animals = copy(replacement);
+    // loop to iterate over animals array //
+   for (var i = 0; i < animals.length; i++) {
+    // if statement to check if name matches animals //
+    if (animals[i] === name) {
+        //if true replace it with the replacement object //
+        return animals.push(replacement);
     }
+   }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -44,23 +47,24 @@ function replace(animals, name, replacement) {
 //              array    string                                     //
 function remove(animals, name) {
     // If an animal with that name exists within the `animals` Array, remove it //
-    if (animals.name === name) {
-        delete animals;
+   for (var i = 0; i < animals.length; i++) {
+    if (animals[i] === name) {
+        delete animals[i];
     }
+   }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function add(animals, animal) {
+function add(animals, obj) {
     // loop over animals array //
-    for (var i = 0; i < animals.length; i++) {
-        // if statement with given conditions //
-        // animal names length less 0    animal species length less 0      animals name is unique
-    if (animals[i].name.length > 0 && animals[i].species.length > 0 && animals[i].name !== animal) {
+    for (var i = 0; i < obj.length; i++) {
+        // obj name length less 0    obj species length less 0      obj name is unique
+    if (obj[i].name.length > 0 && obj[i].species.length > 0 && obj[i].name !== animals) {
         // return animals array with new object //
-        return animals.join(animals);
+        return animals.join(obj);
     } 
  }
 }
