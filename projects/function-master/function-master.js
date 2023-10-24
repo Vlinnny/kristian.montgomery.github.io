@@ -142,7 +142,7 @@ function nonFriends(name, array) {
 // Should take a name and a list of people, and return a list of all the names that <name> is not friends with //
 for (var i = 0; i < array.length; i++) {
     
-}
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -152,9 +152,9 @@ for (var i = 0; i < array.length; i++) {
 function updateObject(object, key, value) {
 // Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it //
     if (object.hasOwnProperty(key)) {
-        return object[key];
+        return object[key]; // will return value of key
     } else {
-        return object[key] = value;
+        return object[key] = value; // will create new key assigned to value
     }
 }
 
@@ -171,7 +171,7 @@ for (var i = 0; i < array.length; i++) {
         // if any properties match //
         if (object[key] === array[i]) {
             // remove //
-            delete object[key];
+            delete object;
         }
      }
   }

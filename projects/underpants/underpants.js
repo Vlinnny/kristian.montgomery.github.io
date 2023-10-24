@@ -82,6 +82,12 @@ _.typeOf = function(value) {
 */
 
 _.first = function(array, number) {
+    if (number > array.length) {
+        return array;
+    }
+    if (number < 0) {
+        return [];
+    }
     // if array is not array return [] //
     if (!Array.isArray(array)) {
         return [];
@@ -119,7 +125,7 @@ if (!Array.isArray(array)) {
     return [];
 }
 if (!number || typeof number === NaN) {
-    return array.length-1
+    return array[array.length-1];
 } else {
     return array.length-1;
 }
