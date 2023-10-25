@@ -117,7 +117,8 @@ return string.includes(word);
 
 function addFriend (name, object) {
 // Should take a name and an object and add the name to the object's friends array then return the object //
-return object.friends.join(name);
+object.friends.push(name);
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -126,23 +127,44 @@ return object.friends.join(name);
 
 function isFriend(name, object) {
 // Should take a name and an object and return true if <name> is a friend of <object> and false otherwise //
-
-if (name.includes(object.friends)) {
-    return true;
- } else {
-    return false;
- }
+// if friends is an array and has a friends property //
+if (Array.isArray(object.friends) && object.hasOwnProperty('friends')) {
+    // loop over the length of the property //
+     for (var i = 0; i < object.friends.length; i++) {
+        // if name equals //
+            if (name === object.friends[i]) {
+            return true; // return true //
+            }
+        }
+    }
+    return false; // otherwise false //
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
+function nonFriends(name, arr) {
 // Should take a name and a list of people, and return a list of all the names that <name> is not friends with //
-for (var i = 0; i < array.length; i++) {
-    
+ let output1 = [];
+ let output2 = [];
+ let output3 = null;
+ for(var i = 0; i < arr.length; i++) {
+    if (name === arr[i].name) {
+        output3 = arr[i];
+    } else {
+        output1.push(arr[i].name);
     }
+ }
+ if(output3 === null) {
+    return output1;
+ }
+ for (var i = 0; i < output1.length; i++) {
+    if (output3.friends.indexOf(output1[i]) == -1) {
+        output2.push(output1[i]);
+    }
+ }
+ return output2;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -151,11 +173,8 @@ for (var i = 0; i < array.length; i++) {
 
 function updateObject(object, key, value) {
 // Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it //
-    if (object.hasOwnProperty(key)) {
-        return object[key]; // will return value of key
-    } else {
-        return object[key] = value; // will create new key assigned to value
-    }
+  object[key] = value;
+  return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -164,17 +183,8 @@ function updateObject(object, key, value) {
 
 function removeProperties(object, array) {
 // Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array> //
-// loop over array //
-for (var i = 0; i < array.length; i++) {
-    // loop over object //
-    for (var key in object) {
-        // if any properties match //
-        if (object[key] === array[i]) {
-            // remove //
-            delete object;
-        }
-     }
-  }
+    
+
 }
 
 //////////////////////////////////////////////////////////////////////

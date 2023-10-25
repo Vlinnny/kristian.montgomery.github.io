@@ -49,7 +49,7 @@ function remove(animals, name) {
     // If an animal with that name exists within the `animals` Array, remove it //
    for (var i = 0; i < animals.length; i++) {
     if (animals[i].name === name) {
-        delete animals[i];
+       animals.splice(0, 1);
     }
   }
 }
