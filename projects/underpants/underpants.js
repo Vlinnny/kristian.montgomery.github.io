@@ -82,21 +82,16 @@ _.typeOf = function(value) {
 */
 
 _.first = function(array, number) {
-    if (number > array.length) {
-        return array;
-    }
     if (number < 0) {
         return [];
-    }
-    // if array is not array return [] //
-    if (!Array.isArray(array)) {
+    } else if (number > array.length) {
+        return array;
+    } else if (!Array.isArray(array)) {
         return [];
-    } else if (!number || typeof number === NaN) {
-    // if number is not given or not a number, return the first elemet in array //
-    return array[0];
+    } else if (!number) {
+        return array[0];
     } else {
-    // otherwise, return the first <number> items of <array>
-    return array[number];
+        return array[number];
     }
    
 }
@@ -121,13 +116,16 @@ _.first = function(array, number) {
 */
 
 _.last = function(array, number) {
-if (!Array.isArray(array)) {
+if (number < 0) {
     return [];
-}
-if (!number || typeof number === NaN) {
+} else if (number > array.length) {
+    return array;
+} else if (!Array.isArray(array)) {
+    return [];
+} else if (!number) {
     return array[array.length-1];
 } else {
-    return array.length-1;
+    return array[number];
 }
 }
 
@@ -151,8 +149,9 @@ if (!number || typeof number === NaN) {
 _.indexOf = function(array, value) {
     for (var i = 0; i < array.length; i++) {
         if (array[i] === value) {
-            return array.length
-        } else {
+            return 1;
+        } 
+        if (!array.includes(value)) {
             return -1;
         } 
         
@@ -177,7 +176,7 @@ _.indexOf = function(array, value) {
 
 _.contains = function(array, value) {
     for (var i = 0; i < array.length; i++) {
-       return array[i] === value ? true : false
+       return array.includes(value) ? true : false
     }
 }
 
@@ -224,14 +223,9 @@ _.each = function(collection, func){
 */
 
 _.unique = function(array) {
-    for (var i = 0; i < array.length; i++) {
-        var output = [];
-        if (array) {
-            output.push(array[i]);
-        }
-        
+    for (var i = 0; i < array.length; i ++) {
+     return _.indexOf(array[i])
     }
-    
 }
 
 
@@ -252,14 +246,13 @@ _.unique = function(array) {
 */
 
 _.filter = function (array, func) {
+    let output = [];
     for (var i = 0; i < array.length; i++) {
-        output = [];
         if(func(array[i], i, array)) {
-            output.push(array);
-        }
-        
+            output.push(array[i]);
+        }  
     }
-    
+    return output;
 }
 
 
@@ -277,15 +270,15 @@ _.filter = function (array, func) {
 */
 // takes in two arguments: an array, a function //
 _.reject = function(array, func) {
+    let output = [];
     // call <function> for each element in <array> //
     for (var i = 0; i < array.length; i++) {
-        func(array[i]);
+        if (!func(array[i], i, array)) {
+            output.push(array[i]);
+        }
     }
     // return a new array of elements for which calling <function> returned false //
-    var output = [];
-    if (func(array[i] === false)) {
-        return output.push();
-    }
+    return output;
 }
 
 
@@ -308,6 +301,10 @@ _.reject = function(array, func) {
 }
 */
 
+_.partition = function(arr, func) {
+ // call function for each element in array //
+
+}
 
 /** _.map
 * Arguments:
@@ -324,6 +321,10 @@ _.reject = function(array, func) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
+
+_.map = function(collection, func) {
+   
+}
 
 
 /** _.pluck
