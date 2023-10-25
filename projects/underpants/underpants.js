@@ -82,18 +82,17 @@ _.typeOf = function(value) {
 */
 
 _.first = function(array, number) {
-    if (number < 0) {
-        return [];
-    } else if (number > array.length) {
+    if (number < 0) { // if number is negative //
+        return []; 
+    } else if (number > array.length) { // if number is greater than length of array //
         return array;
-    } else if (!Array.isArray(array)) {
+    } else if (!Array.isArray(array)) { // if number is not an array //
         return [];
-    } else if (!number) {
+    } else if (!number) { // if number is not given //
         return array[0];
     } else {
-        return array[number];
+        return array[number]; // return first number items of array //
     }
-   
 }
 
 
@@ -361,8 +360,40 @@ _.map = function(collection, func) {
 */
 
 _.every = function (collection, func) {
-    
-}
+    // determine if collection is an array //
+    if (Array.isArray(collection)) {
+      // determine if function was not provided //
+      if (!func){
+        for (let i = 0; i < collection.length; i++) {
+            if(!collection[i]) {
+                return false;
+            }
+        }
+      } else { // else it was
+        for (let i = 0; i < collection.length; i++) {
+            // determine if the current item passed the inout functions's test
+            if (func(collection[i]) === false) {
+                return false;
+            }
+        }
+      } 
+    } else { // else its an object //
+        if(func === undefined){
+            for(var key in collection) {
+                if (!collection[key]) {
+                    return false;
+                }
+            }
+        } else {
+            for (var key in collection) {
+                if (func(collection[key] === false)) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+} 
 
 
 /** _.some
