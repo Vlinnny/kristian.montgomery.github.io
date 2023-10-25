@@ -183,12 +183,12 @@ function updateObject(object, key, value) {
 
 function removeProperties(object, array) {
 // Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array> //
-// loop over object //
-  for (var key in object){
-    // if any keys match array //
-    if (key === array) {
-        // remove them //
-        object.splice(0,1);
+// loop over array //
+  for(var i = 0; i < array.length; i++) {
+    // if array values equal object keys //
+    if (object.hasOwnProperty(array[i])) {
+        // delete object key //
+        delete object[array[i]];
     }
   }
 }

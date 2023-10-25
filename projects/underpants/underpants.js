@@ -149,7 +149,7 @@ if (number < 0) {
 _.indexOf = function(array, value) {
     for (var i = 0; i < array.length; i++) {
         if (array[i] === value) {
-            return 1;
+            return i;
         } 
         if (!array.includes(value)) {
             return -1;
@@ -359,6 +359,10 @@ _.map = function(collection, func) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+
+_.every = function (collection, func) {
+    
+}
 
 
 /** _.some

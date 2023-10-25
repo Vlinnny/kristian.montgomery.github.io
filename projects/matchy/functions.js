@@ -59,11 +59,9 @@ function remove(animals, name) {
 //////////////////////////////////////////////////////////////////////
 //   array of animals,  object representing a new animal to be added   //
 function add(animals, obj) {
-    // check that the animal object has a 'name' property with a length > 0 and a 'species' property with a length > 0 //
-    // and has a unique name, meaning no other animals have that name //
-    if (obj.name.length > 0 && obj.species.length > 0 && obj.name !== animals.name) {
-        // add this object to the animals array if all conditions pass //
-       return animals.push(obj);
+    let input = animals.find((z) => z.name === obj.name);
+    if ((!input) && obj.name.length > 0 && obj.species.length > 0) {
+        animals.push(obj);
     }
   }
 
