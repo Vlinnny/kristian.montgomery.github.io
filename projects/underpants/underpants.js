@@ -124,7 +124,7 @@ if (number < 0) {
 } else if (!number) {
     return array[array.length-1];
 } else {
-    return array[number];
+    return array.pop(number); // return the last <number> items in <array> //
 }
 }
 
@@ -306,6 +306,17 @@ _.reject = function(array, func) {
 
 _.partition = function(arr, func) {
  // call function for each element in array //
+ let output = []; // storage for truthy values //
+ let output2 = [];// storage for falsy values //
+ for (var i = 0; i < arr.length; i++) { // loop over array //
+    if (func(arr[i], i, arr)) { 
+        output.push(arr[i]); // push truthy values into output //
+    }
+    if (!func(arr[i], i, arr)) {
+        output2.push(arr[i]); // push falsy values in output2 //
+    }
+    // join the arrays into a new array, but seperated //
+ } 
 
 }
 
