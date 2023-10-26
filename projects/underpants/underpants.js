@@ -124,7 +124,7 @@ if (number < 0) {
 } else if (!number) {
     return array[array.length-1];
 } else {
-    return array.pop(number); // return the last <number> items in <array> //
+    return array.splice(1, number); // return the last <number> items in <array> //
 }
 }
 
@@ -317,6 +317,7 @@ _.partition = function(arr, func) {
     }
     // join the arrays into a new array, but seperated //
  } 
+ return [output].concat([output2]); // is this really the right way? //
 
 }
 
@@ -337,7 +338,17 @@ _.partition = function(arr, func) {
 */
 
 _.map = function(collection, func) {
-   
+   let output = [];
+if(Array.isArray(collection)) { // if its an array //
+    for(var i = 0; i < collection.length; i++) {
+         output.push(func(collection[i], i, collection));
+    }
+   } else { // else its an object //
+    for(var key in collection) {
+        output.push(func(collection[key], key, collection));
+    }
+   }
+   return output;
 }
 
 
@@ -352,6 +363,10 @@ _.map = function(collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function(arr, prop) {
+let array = [];
+ return _.map(array, arr(prop)); 
+}
 
 /** _.every
 * Arguments:
@@ -431,6 +446,27 @@ _.every = function (collection, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+
+_.some = function(collection, func) {
+    if(Array.isArray(collection)) {
+        for(var i = 0; i < collection.length; i++) {
+            if (func(collection[i])) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    } else { // else its an object //
+        for(var key in collection) {
+            if(func(collection[key])) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+}
 
 
 /** _.reduce
