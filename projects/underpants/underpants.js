@@ -378,7 +378,7 @@ _.every = function (collection, func) {
         }
       } 
     } else { // else its an object //
-        if(func === undefined){
+        if(!func){
             for(var key in collection) {
                 if (!collection[key]) {
                     return false;
@@ -386,7 +386,7 @@ _.every = function (collection, func) {
             }
         } else {
             for (var key in collection) {
-                if (func(collection[key] === false)) {
+                if (func(collection[key], key, collection) === false) {
                     return false;
                 }
             }
