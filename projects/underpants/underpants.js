@@ -371,7 +371,7 @@ _.every = function (collection, func) {
         }
       } else { // else it was
         for (let i = 0; i < collection.length; i++) {
-            // determine if the current item passed the inout functions's test
+            // determine if the current item passed the input functions's test
             if (func(collection[i]) === false) {
                 return false;
             }
