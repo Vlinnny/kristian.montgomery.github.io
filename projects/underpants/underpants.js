@@ -364,8 +364,9 @@ if(Array.isArray(collection)) { // if its an array //
 */
 
 _.pluck = function(arr, prop) {
-let array = [];
- return _.map(array, arr(prop)); 
+let array = _.map(array, x => x.push(arr.prop)); 
+return array;
+ 
 }
 
 /** _.every
@@ -450,7 +451,7 @@ _.every = function (collection, func) {
 _.some = function(collection, func) {
     if(Array.isArray(collection)) {
         for(var i = 0; i < collection.length; i++) {
-            if (func(collection[i])) {
+            if (func(collection[i], i, collection)) {
                 return true;
             } else {
                 return false;
@@ -459,7 +460,7 @@ _.some = function(collection, func) {
 
     } else { // else its an object //
         for(var key in collection) {
-            if(func(collection[key])) {
+            if(func(collection[key], key, collection)) {
                 return true;
             } else {
                 return false;
@@ -488,12 +489,31 @@ _.some = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
-_.reduce = function() {
-    
+_.reduce = function(array, func, seed) {
+    let result;
+    // determine if the seed value doesn't exist //
+    if (seed === undefined){ // no seed provided //
+        result = array[0]; // first item in array is assigned to result //
+        for (let i = 1; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    } else { // else it does //
+      result = seed;
+      for(var i = 0; i < array.length; i++) {
+        result = func(result, array[i], i); 
+        // result it being reassigned to RESULT of invoking the callback function //
+      }
+    } 
+
+    return result;
 }
 
+// reduce //
+    // iterate over an array //
+    // invoke a callback function on each item to *acumulate* a return value //
 
-/** _.extend
+
+/** _.extend //  equivalent of Object.assign()
 * Arguments:
 *   1) An Object
 *   2) An Object
@@ -508,7 +528,14 @@ _.reduce = function() {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function (obj1, obj2) {
+_.extend = function (obj1, obj2, ...obj) {
+    Object.assign(obj1, obj2);
+    if(obj) {
+    for(let i = 0; i < obj.length; i++) { // this felt good //
+        Object.assign(obj1, obj[i]);
+    }
+}
+    return obj1;
 
 }
 
