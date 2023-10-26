@@ -27,7 +27,7 @@ var maleCount = function(array) {
 };
 
 var femaleCount = function(array) {
-    let females = _.reduce(array, customer => customer.gender === 'female',);
+    let females = _.reduce(array, customer => customer.gender === 'female',0);
     return females.length;
 }
 

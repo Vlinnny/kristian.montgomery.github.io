@@ -76,3 +76,8 @@
     // Null expresses no value or identification //
     const z = null;
     console.log(z); // ==> Null //
+// NaN //
+    // NaN is global and represents not a number //
+    const y = NaN;
+    console.log(y); // ==> NaN //
+// Infinity //
