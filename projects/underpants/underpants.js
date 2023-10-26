@@ -91,7 +91,7 @@ _.first = function(array, number) {
     } else if (!number) { // if number is not given //
         return array[0];
     } else {
-        return array[number]; // return first number items of array //
+        return array.splice(0, number); // return first number items of array //
     }
 }
 
@@ -222,9 +222,13 @@ _.each = function(collection, func){
 */
 
 _.unique = function(array) {
-    for (var i = 0; i < array.length; i ++) {
-     return _.indexOf(array[i])
+    let output = [];
+    for (var i = 0; i < array.length; i++) {
+     if (output.indexOf(array[i]) === -1) {
+        output.push(array[i]);
+     }
     }
+    return output;
 }
 
 
