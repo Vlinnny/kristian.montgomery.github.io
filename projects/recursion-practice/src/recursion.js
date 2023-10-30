@@ -39,7 +39,8 @@ var arraySum = function(array) {
 };
 
 // 4. Check if a number is even.
-var isEven = function(n) {
+var isEven = function(number)  {
+ 
 };
 
 // 5. Sum all integers below a given integer.
