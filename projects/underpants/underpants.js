@@ -364,8 +364,7 @@ if(Array.isArray(collection)) { // if its an array //
 */
 
 _.pluck = function(arr, prop) {
-let array = _.map(array, x => x.push(arr.prop)); 
-return array;
+return _.map(arr, x => x[prop]);
  
 }
 
@@ -449,22 +448,9 @@ _.every = function (collection, func) {
 */
 
 _.some = function(collection, func) {
-    if(Array.isArray(collection)) {
-        for(var i = 0; i < collection.length; i++) {
-            if (func(collection[i], i, collection)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-    } else { // else its an object //
-        for(var key in collection) {
-            if(func(collection[key], key, collection)) {
-                return true;
-            } else {
-                return false;
-            }
+    for( var i = 0; i < collection.length; i++){
+        if (func(collection[i])) {
+            return true;
         }
     }
 }

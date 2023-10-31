@@ -27,17 +27,12 @@ var maleCount = function(array) {
 };
 
 var femaleCount = function(array) {
-    let females = _.reduce(array, customer => customer.gender === 'female',0);
+    let females = _.reduce(array, customer => customer.gender === 'female');
     return females.length;
 }
 
 var oldestCustomer = function(array) {
-    let oldest = _.filter(array, function(old) {
-        if (old.age > array.age) {
-            return old.name;
-        }
-    });
-    return oldest;
+    
 }
 
 var youngestCustomer;
