@@ -27,21 +27,38 @@ var maleCount = function(array) {
 };
 
 var femaleCount = function(array) {
-    let females = _.reduce(array, customer => customer.gender === 'female');
-    return females.length;
+    let females = _.reduce(array, function(result, customer) {if (customer.gender === 'female'){
+    result++
+    }return result; }, 0);
+    
+    return females;
 }
 
 var oldestCustomer = function(array) {
-    
+    let oldest = _.reduce(array, function(result, customer){
+        if (customer.age > result.age) {
+            return result.name;
+        }
+    },0);
+
+    return oldest;
 }
 
 var youngestCustomer;
+_.reduce
 
 var averageBalance;
+_.map
+_.map
+_.reduce
 
 var firstLetterCount;
+_.reduce
+_.map
 
 var friendFirstLetterCount;
+_.filter
+_.filter
 
 var friendsCount;
 

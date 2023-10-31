@@ -448,11 +448,38 @@ _.every = function (collection, func) {
 */
 
 _.some = function(collection, func) {
-    for( var i = 0; i < collection.length; i++){
-        if (func(collection[i])) {
-            return true;
-        }
-    }
+    if (Array.isArray(collection)) {
+        // determine if function was not provided //
+        if (!func){
+          for (let i = 0; i < collection.length; i++) {
+              if(collection[i]) {
+                  return true;
+              }
+          }
+        } else { // else it was
+          for (let i = 0; i < collection.length; i++) {
+              // determine if the current item passed the input functions's test
+              if (func(collection[i], i, collection)) {
+                  return true;
+              }
+          }
+        } 
+      } else { // else its an object //
+          if(!func){
+              for(var key in collection) {
+                  if (collection[key]) {
+                      return true;
+                  }
+              }
+          } else {
+              for (var key in collection) {
+                  if (func(collection[key], key, collection)) {
+                      return true;
+                  }
+              }
+          }
+      }
+      return false;
 }
 
 
