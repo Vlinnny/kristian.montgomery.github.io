@@ -30,7 +30,7 @@ var sum = function(array, s = 0) {
   }
   // recursion
   s += array[0];
-  return sum(array.splice(1), s)
+  return sum(array.slice(1), s);
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
