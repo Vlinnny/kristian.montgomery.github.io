@@ -120,10 +120,26 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  // base
+  if (string.length <= 1) {
+    return string;
+  }
+  // recursive
+  return string.slice(-1) + reverse(string.slice(0, -1));
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  // remove spaces and convert to lowercase for edge case
+  string = string.replace(/\s/g, '').toLowerCase();
+  // base
+  if (string.length <= 1) {
+    return true;
+  } else if (string[0] !== string[string.length -1]) {
+    return false;
+  }
+  // recursive
+  return palindrome(string.slice(1, -1));
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -137,12 +153,14 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
-var multiply = function(x, y) {
+var multiply = function(x, y) { // multiply(2, 4) // => 8 //
+  
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
 var divide = function(x, y) {
+  
 };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers.  The GCD of two
@@ -159,6 +177,15 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  // base
+  if (str1 === '' && str2 === '') {
+    return true;
+  } else if (str1[0] !== str2[0]) {
+    return false
+  }
+
+  //recursion
+  return compareStr(str1.slice(1), str2.slice(1));
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
