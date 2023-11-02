@@ -154,13 +154,7 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) { // multiply(2, 4) // => 8 //
-  //base
-  if() {
-
-  }
-
-  // recursion
- return multiply();
+  
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -196,7 +190,12 @@ var compareStr = function(str1, str2) {
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str){ // needs to return a new array
+  // base
+
+  // recusion
+
+  return createArray(str.slice(1));
 };
 
 // 17. Reverse the order of an array

@@ -86,11 +86,50 @@ var friendFirstLetterCount = function(customerData, customerName, letter) {
   }
 
 _
-var friendsCount;
+var friendsCount = function(data, name) {
+  // use the filter method to find customers with friends including the provided name
+  let matchingCustomers = data.filter((customer) => {
+    return customer && customer.friends && customer.friends.some((friend) => friend.name === name);
+  });
 
-var topThreeTags;
+  // ,ap the matching customers to an array of their names
+  let matchingNames = matchingCustomers.map((customer) => {
+    return customer && customer.name ? customer.name : null;
+  });
 
-var genderCount;
+  return matchingNames;
+}
+
+var topThreeTags = function(array) {
+  // Create a storage object literal
+  let frequency = {};
+  
+  // Use forEach to count the frequency of each tag
+  array.forEach((customer) => {
+    customer.tags.forEach(tag => {
+      frequency[tag] = (frequency[tag] || 0) + 1;
+    });
+  });
+
+  // Get keys in a new storage array and use .map to convert them to an array of objects
+  let frequencyArray = Object.keys(frequency).map((tag) => ({ tag, count: frequency[tag] }));
+
+  // Sort the array by tag count in descending order
+  frequencyArray.sort((x, y) => y.count - x.count);
+
+  // Extract the top three tags
+  let topThreeTags = frequencyArray.slice(0, 3).map(x => x.tag);
+
+  return topThreeTags;
+}
+
+var genderCount = function(array) {
+  return _.reduce(array,(summary, customer) => {
+      const gender = customer.gender || 'unknown'; // Handle missing or undefined gender
+      summary[gender] = (summary[gender] || 0) + 1;
+      return summary;
+  },{});
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
