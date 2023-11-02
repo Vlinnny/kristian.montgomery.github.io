@@ -154,7 +154,13 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) { // multiply(2, 4) // => 8 //
-  
+  //base
+  if() {
+
+  }
+
+  // recursion
+ return multiply();
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
