@@ -274,14 +274,11 @@ _.filter = function (array, func) {
 // takes in two arguments: an array, a function //
 _.reject = function(array, func) {
     let output = [];
-    // call <function> for each element in <array> //
     for (var i = 0; i < array.length; i++) {
         if (!func(array[i], i, array)) {
             output.push(array[i]);
         }
     }
-    // return a new array of elements for which calling <function> returned false //
-    return output;
 }
 
 
