@@ -360,3 +360,54 @@ _.some = function (collection, func) {
     return false;
 };
 module.exports.some = some;
+
+
+
+
+/**
+ * _.reduce: reduces an array to a single value by apllying a callback function
+ * 
+ * @param {array} the input array to be reduce
+ * @param {function} the function applied to each elemetn in the array
+ * @param {seed} (optional) the initial value for the accumulator
+ * @returns {any} the final reduced value
+ */
+_.reduce = function(array, func, seed) {
+    let result;
+    if (seed === undefined) {
+        result = array[0];
+        for (let i = 1; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    } else {
+        result = seed;
+        for (var i = 0; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    }
+    return result;
+};
+module.exports.reduce = reduce;
+
+
+
+
+/**
+ * _.extend extends an object by merging its properties with properties from other objects
+ * 
+ * @param {object} the target objects to extend with properties
+ * @param {object} the first source object whose propertied are merged
+ * @param {...object} (optional) additional source objects
+ * @returns {object} the modified target object with merged properties
+ */
+_.extend = function (obj1, obj2, ...obj) {
+    Object.assign(obj1, obj2);
+    if(obj) {
+    for(let i = 0; i < obj.length; i++) { // this felt good //
+        Object.assign(obj1, obj[i]);
+    }
+}
+    return obj1;
+
+}
+module.exports.extend = extend;
