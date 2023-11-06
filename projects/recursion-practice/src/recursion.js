@@ -406,12 +406,30 @@ var minimizeZeroes = function(array) {
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 var alternateSign = function(array) {
+  //base
+// if empty return empty array
+if (array.length === 0) {
+  return [];
+}
+// deal with first element always being positive
+ let num1 = Math.abs(array[0]);
+  // recursion
+  let output = alternateSign(array.slice(1));
+
+  // figure out the sign based on index
+  if (array.length % 2 === 0) {
+    return [num1].concat(output);
+  } else {
+    return [-num1].concat(output);
+  }
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
+ 
+  
 };
 
 // *** EXTRA CREDIT ***
