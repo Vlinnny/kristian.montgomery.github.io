@@ -154,7 +154,16 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) { // multiply(2, 4) // => 8 //
-}
+  if ( y === 0) {
+    return 0;
+  } else if (y < 0) {
+    return -multiply(x, -y);
+  } else {
+    return x + multiply(x, y - 1);
+    }
+  };
+
+
 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
@@ -310,11 +319,15 @@ var capitalizeFirst = function(array) {
   if (array.length === 0) {
     return [];
   }
+  //get first word and capitalize first letter
+  let firstWord = array[0];
+  let capitalized = firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
 
-  // recursion
-  let output = array[0].charAt(0).toUpperCase();
-  let output2 = capitalizeFirst(array.slice(1));
-  return Array.from(output).concat(output2);
+  //recursive
+  let words = capitalizeFirst(array.slice(1));
+
+  // now return the words followd by the rest of the words
+  return [capitalized, ...words];
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -428,7 +441,37 @@ if (array.length === 0) {
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
- 
+ // make an object to map the digits to their word equivelents 1-9
+ let digitWord = {
+  '0' : 'zero',
+  '1' : 'one',
+  '2' : 'two',
+  '3' : 'three',
+  '4' : 'four',
+  '5' : 'five',
+  '6' : 'six',
+  '7' : 'seven',
+  '8' : 'eight',
+  '9' : 'nine'
+ };
+ // create a function to convert single characters
+ let convertChar = (char) => {
+  if (char in digitWord) {
+    return digitWord[char];
+  } else {
+    return char;
+  }
+ };
+
+
+ //base
+if (str === '') {
+  return '';
+}
+
+
+ //recurison
+ return convertChar(str[0]) + numToText(str.slice(1));
   
 };
 
