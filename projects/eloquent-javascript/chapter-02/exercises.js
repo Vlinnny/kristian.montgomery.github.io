@@ -33,19 +33,21 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard(size) {
-  let chessboard = '';
+  let board = '';
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
       if ((i + j) % 2 === 0) {
-        chessboard += ' ';
+        board += ' ';
       } else {
-        chessboard += '#';
+        board += '#';
       }
     }
-    chessboard += '\n';
+    board += '\n';
   }
-  return chessboard;
+  console.log(board);
 }
+
+
 
 
 
